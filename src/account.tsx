@@ -29,7 +29,7 @@ export function Account() {
       functionName: "createTweet",
       args: [inputValue],
     });
-    console.log(hash);
+    setInputValue('')
   }
   const {
     data: tweets,
@@ -43,7 +43,7 @@ export function Account() {
     query: { refetchInterval: 1000 * 60 },
   });
 
-  if (isError == true) return <div>Error</div>;
+  if (isError) return <div>Error</div>;
   if (isFetching) return <div>Loading....</div>;
   return (
     <div className="w-6/12">
@@ -79,5 +79,4 @@ export function Account() {
       </div>
     </div>
   );
-  s;
 }
